@@ -1,0 +1,47 @@
+version: "3"
+services: 
+    api:
+        build: .
+        depends_on:
+            - postgres
+        ports: 
+            - 80:8000
+        #Allow container to auto update image when changes are made to any files
+        volumes:
+            - ./:/usr/src/app:ro
+
+        environment:
+            - CBPRO_API_BASE_URL=${CBPRO_API_BASE_URL}
+            - CBPRO_API_KEY=${CBPRO_API_KEY}
+            - CBPRO_API_SECRET=${CBPRO_API_SECRET}
+            - CBPRO_PASSPHRASE=${CBPRO_PASSPHRASE}
+            - DATABASE_HOSTNAME=${DATABASE_HOSTNAME}
+            - DATABASE_PORT=${DATABASE_PORT}
+            - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+            - DATABASE_NAME=${DATABASE_NAME}
+            - DATABASE_USERNAME=${DATABASE_USERNAME}
+            - ABACUS_SECRET_KEY=${ABACUS_SECRET_KEY}
+            - ABACUS_ALGORITHM=${ABACUS_ALGORITHM}
+            - ABACUS_ACCESS_TOKEN_EXPIRE_MINUTES=${ABACUS_ACCESS_TOKEN_EXPIRE_MINUTES}
+            - ABACUS_PASSWORD=${ABACUS_PASSWORD}
+            - PAPER_DATABASE_NAME=${PAPER_DATABASE_NAME}
+            - TD_CONSUMER_KEY=${TD_CONSUMER_KEY}
+            - TD_REDIRECT_URI=${TD_REDIRECT_URI}
+            - TD_ACCOUNT_NUMBER=${TD_ACCOUNT_NUMBER}
+            - TD_CREDENTIALS_PATH=${TD_CREDENTIALS_PATH}
+    postgres:
+        image: postgres
+        environment:
+            - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+            - POSTGRES_DB=${DATABASE_NAME}
+
+        volumes:
+            - postgres-db:/var/lib/postgresql/data
+volumes:
+    postgres-db:
+
+#
+            
+
+
+        

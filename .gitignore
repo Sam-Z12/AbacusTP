@@ -1,0 +1,30 @@
+#Server
+.env
+venv/
+run.py
+sandbox.py
+__pycache__
+/docker-compose.yml
+todo.txt
+start_paper_trade.py
+deploy.md
+portfolio_opt.md
+rabbitmq.md
+
+#web app dependencies
+node_modules
+/abacus_webapp/abacus-web/.pnp
+.pnp.js
+/abacus_webapp/abacus-web/coverage
+/abacus_webapp/abacus-web/build
+
+#web app misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
