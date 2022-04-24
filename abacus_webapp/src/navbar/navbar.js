@@ -1,24 +1,27 @@
 import React from "react"
-import {Nav, NavLink, NavMenu, NavBtnLink, NavBtn} from './navbar_styles'
+import {Nav, NavLink, NavMenuL, NavMenuR } from './navbar_styles'
 
 export const Navbar = () => {
     return(
         <>
            <Nav>
-               <NavLink to="/">
-
-               </NavLink>
-               <NavMenu>
-                   <NavLink to="Home" activeStyle>
-                       Home
-                   </NavLink>
-                   <NavLink to="other1" activeStyle>
-                       Other
-                   </NavLink>
-                   <NavLink to="other2" activeStyle>
-                       Other 
-                   </NavLink>
-               </NavMenu>
+               <NavMenuL>
+                    <NavLink to="/">
+                        Home
+                    </NavLink>
+                    <NavLink to="/paper_trade" >
+                        Paper Trading
+                    </NavLink>
+                    <NavLink to="/algorithms">
+                        Algorithms
+                    </NavLink>
+                </NavMenuL>
+                <NavMenuR>
+                    <NavLink to="/login" >
+                    Login
+                    </NavLink>
+                </NavMenuR>
+               
            </Nav>
         </>
     )

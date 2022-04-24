@@ -1,7 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
-    background: #0d0d0f;
+    background-color: rgba(11, 11, 18, 1)
 
 }
 
