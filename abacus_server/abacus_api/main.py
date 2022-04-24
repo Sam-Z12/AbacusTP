@@ -34,4 +34,5 @@ app.include_router(analysis_pipeline.router)
 
 @app.get("/")
 async def root():
-    return {"message": "Welcome Sam, to Abacus Server"}
+    return {"title": "Welcome to Abacus",
+            "description": "Abacus is algorithmic trading platform aimed at making algorithm deployment easy!"}

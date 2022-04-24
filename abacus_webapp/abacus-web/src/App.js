@@ -1,13 +1,15 @@
-
-import './App.css';
-import { Func } from './comp';
-import {MyHome} from './home';
+import {MyHome} from './pages/home';
+import './app.css'
+import {Navbar} from './navbar/navbar'
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-     <MyHome/>
-
+    <div className='App'>
+      <Router>
+        <Navbar/>
+      </Router>
+      <MyHome/>
     </div>
   );
 }
